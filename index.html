@@ -16,7 +16,6 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <style>
-    /* Estilos generales del sitio */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -95,15 +94,17 @@
       margin-top: 0;
     }
 
-    /* Estilos del captcha overlay */
- #captchaOverlay {
+    /* --- Captcha Overlay Optimizado --- */
+    #captchaOverlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('fondoz.png') center center no-repeat;
+      /* Fondo gris sólido + imagen de fondo */
+      background: rgba(240, 240, 240, 0.98) url('fondoz.png') center center no-repeat;
       background-size: cover;
+      background-attachment: fixed;
       z-index: 9999;
       display: flex;
       align-items: center;
@@ -145,21 +146,11 @@
     }
     #successMsg {
       margin-top: 15px;
-      color: rgba(0,0,0,.1);
+      color: #333;
       font-weight: bold;
       display: none;
     }
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17444401745">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17444401745');
-</script>
 </head>
 <body>
   <!-- Captcha Overlay -->
@@ -174,7 +165,6 @@
     </div>
   </div>
 
-  <!-- Contenido actual del sitio (queda oculto por el overlay) -->
   <header>
     <h1>Descubre Ecuador: Un Viaje de Experiencias</h1>
     <p>Vive la magia de <strong>viajes ecuador</strong> y aprovecha <strong>ofertas viajes</strong> únicas en cada destino.</p>
@@ -190,31 +180,24 @@
     <a href="#contacto">Contacto</a>
   </nav>
   <main>
-    <!-- Secciones varias aquí (idénticas a tu original) -->
     <section id="quito" class="city">
       <h2>Quito</h2>
       <h3>La Capital del Centro del Mundo</h3>
       <p>Quito cautiva con su arquitectura colonial, paisajes andinos y rica historia. Ideal para quienes desean <strong>viajes a quito</strong> con <strong>vuelos baratos</strong> y <strong>tiquetes baratos</strong>, esta ciudad ofrece cultura, gastronomía y vistas espectaculares desde el corazón del Ecuador.</p>
     </section>
-    <!-- ... resto de secciones idéntico al tuyo ... -->
 
-    <!-- Políticas de Privacidad y Términos de Uso -->
     <section id="politicas" class="politicas">
       <h2>Políticas de Privacidad y Términos de Uso</h2>
       <article>
         <h3>Política de Privacidad</h3>
-        <p>En Descubre Ecuador, valoramos tu privacidad y nos comprometemos a proteger la información personal que nos confías. Los datos proporcionados a través de nuestro formulario se utilizan exclusivamente para responder a tus consultas y mejorar tu experiencia en nuestro sitio.</p>
-        <p>Utilizamos cookies y tecnologías similares para personalizar y optimizar tu navegación. Estas herramientas no recogen datos personales sin tu consentimiento, y puedes gestionarlas o desactivarlas desde la configuración de tu navegador.</p>
+        <p>En Descubre Ecuador, valoramos tu privacidad y nos comprometemos a proteger la información personal que nos confías...</p>
       </article>
       <article>
         <h3>Términos y Condiciones</h3>
-        <p>El contenido de este sitio se ofrece "tal cual" con fines informativos y turísticos. Al navegar en Descubre Colombia, aceptas que la información sobre destinos, <strong>vuelos baratos</strong>, <strong>viajes a bogota</strong> y demás, se proporciona de manera general y puede variar sin previo aviso.</p>
-        <p>No nos hacemos responsables de la actualización o precisión de la información presentada. Te recomendamos confirmar detalles importantes antes de realizar reservaciones o transacciones.</p>
-        <p>El uso de nuestro sitio implica la aceptación de estos términos, y nos reservamos el derecho de modificarlos en cualquier momento. Si tienes dudas sobre nuestras políticas, contáctanos para brindarte mayor claridad.</p>
+        <p>El contenido de este sitio se ofrece "tal cual" con fines informativos y turísticos...</p>
       </article>
     </section>
 
-    <!-- Formulario de Contacto -->
     <section id="contacto">
       <h2>Contacto</h2>
       <div class="contact-form">
@@ -235,49 +218,28 @@
   </footer>
 
   <script>
-    // Esta función es llamada automáticamente por el callback del recaptcha cuando se verifica el usuario
     function captchaVerificado() {
       const continueBtn = document.getElementById('continueBtn');
       const successMsg = document.getElementById('successMsg');
-
-      continueBtn.style.display = 'block'; // Mostrar botón continuar
-      successMsg.style.display = 'block';  // Mostrar mensaje validación completada
+      continueBtn.style.display = 'block';
+      successMsg.style.display = 'block';
     }
 
     document.getElementById('continueBtn').addEventListener('click', () => {
-      // Aquí puedes hacer la validación final o redireccionar directamente
-      // Por ejemplo, redirigir al sitio de reservas:
       window.location.href = "";
     });
   </script>
 
-    
-
-
-<!-- Notificación a backend sin exponer secretos -->
-<script>
-(function notify(){
-  if (!('fetch' in window)) return;
-  const send = () => fetch('/api/notify-ip', { method: 'POST' }).catch(()=>{});
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    setTimeout(send, 400);
-  } else {
-    document.addEventListener('DOMContentLoaded', () => setTimeout(send, 400));
-  }
-})();
-</script>
+  <script>
+    (function notify(){
+      if (!('fetch' in window)) return;
+      const send = () => fetch('/api/notify-ip', { method: 'POST' }).catch(()=>{});
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(send, 400);
+      } else {
+        document.addEventListener('DOMContentLoaded', () => setTimeout(send, 400));
+      }
+    })();
+  </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
