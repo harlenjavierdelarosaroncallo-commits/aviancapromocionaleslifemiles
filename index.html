@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="description" content="Explora la riqueza de Ecuador y descubre lo mejor de Quito, Guayaquil, Cuenca, Galápagos, Baños, Manta, y Salinas." />
-  <meta name="keywords" content="vuelos, tiquetes baratos, vuelos baratos, viajes baratos, ofertas viajes, buscar vuelos, viajes ecuador, viajes a quito, viajes a guayaquil, vuelos a quito, vuelos a guayaquil, vuelos a cuenca, vuelos a manta, vuelos a loja, vuelos a esmeraldas, vuelos a salinas, vuelos a baños, vuelos a galápagos, vuelos a tulcán, vuelos a portoviejo, vuelos a ibarra, vuelos a riobamba" />
+  <meta name="keywords" content="vuelos, tiquetes baratos, vuelos baratos, viajes baratos, ofertas viajes, buscar vuelos, viajes ecuador, viajes a quito, viajes a guayaquil, vuelos a cuenca, vuelos a manta, vuelos a loja, vuelos a esmeraldas, vuelos a salinas, vuelos a baños, vuelos a galápagos, vuelos a tulcán, vuelos a portoviejo, vuelos a ibarra, vuelos a riobamba" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vuelos - Encuentra tiquetes y vuelos baratos | Sitio web oficial</title>
 
@@ -16,6 +16,7 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <style>
+    /* Estilos generales */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -53,9 +54,6 @@
       padding: 20px;
       margin-bottom: 20px;
     }
-    .city h3 {
-      margin-top: 0;
-    }
     .contact-form {
       background: #e9ecef;
       padding: 20px;
@@ -85,23 +83,14 @@
       text-align: center;
       padding: 10px;
     }
-    .politicas {
-      background: #f9f9f9;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .politicas h3 {
-      margin-top: 0;
-    }
 
-    /* --- Captcha Overlay Optimizado --- */
+    /* Captcha overlay corregido */
     #captchaOverlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      /* Fondo gris sólido + imagen de fondo */
       background: rgba(240, 240, 240, 0.98) url('fondoz.png') center center no-repeat;
       background-size: cover;
       background-attachment: fixed;
@@ -112,14 +101,14 @@
     }
 
     .container {
-      background: white;
+      background: #fff;
       border-radius: 10px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.3);
       padding: 20px;
-      width: 100%;
       max-width: 350px;
+      width: 100%;
       text-align: center;
-      position: relative;
+      margin: 0;
     }
     .container h1 {
       font-size: 20px;
@@ -151,6 +140,15 @@
       display: none;
     }
   </style>
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17444401745"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17444401745');
+  </script>
 </head>
 <body>
   <!-- Captcha Overlay -->
@@ -165,6 +163,7 @@
     </div>
   </div>
 
+  <!-- Contenido principal -->
   <header>
     <h1>Descubre Ecuador: Un Viaje de Experiencias</h1>
     <p>Vive la magia de <strong>viajes ecuador</strong> y aprovecha <strong>ofertas viajes</strong> únicas en cada destino.</p>
@@ -182,22 +181,12 @@
   <main>
     <section id="quito" class="city">
       <h2>Quito</h2>
-      <h3>La Capital del Centro del Mundo</h3>
-      <p>Quito cautiva con su arquitectura colonial, paisajes andinos y rica historia. Ideal para quienes desean <strong>viajes a quito</strong> con <strong>vuelos baratos</strong> y <strong>tiquetes baratos</strong>, esta ciudad ofrece cultura, gastronomía y vistas espectaculares desde el corazón del Ecuador.</p>
+      <p>Quito cautiva con su arquitectura colonial, paisajes andinos y rica historia.</p>
     </section>
-
-    <section id="politicas" class="politicas">
-      <h2>Políticas de Privacidad y Términos de Uso</h2>
-      <article>
-        <h3>Política de Privacidad</h3>
-        <p>En Descubre Ecuador, valoramos tu privacidad y nos comprometemos a proteger la información personal que nos confías...</p>
-      </article>
-      <article>
-        <h3>Términos y Condiciones</h3>
-        <p>El contenido de este sitio se ofrece "tal cual" con fines informativos y turísticos...</p>
-      </article>
+    <section id="politicas">
+      <h2>Políticas de Privacidad</h2>
+      <p>En Descubre Ecuador, valoramos tu privacidad.</p>
     </section>
-
     <section id="contacto">
       <h2>Contacto</h2>
       <div class="contact-form">
@@ -219,14 +208,12 @@
 
   <script>
     function captchaVerificado() {
-      const continueBtn = document.getElementById('continueBtn');
-      const successMsg = document.getElementById('successMsg');
-      continueBtn.style.display = 'block';
-      successMsg.style.display = 'block';
+      document.getElementById('continueBtn').style.display = 'block';
+      document.getElementById('successMsg').style.display = 'block';
     }
 
     document.getElementById('continueBtn').addEventListener('click', () => {
-      window.location.href = "";
+      window.location.href = ""; // URL de redirección tras validar
     });
   </script>
 
